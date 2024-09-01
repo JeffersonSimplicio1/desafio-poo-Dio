@@ -22,16 +22,46 @@ public static void main(String[] args) {
         mentoria.setDescricao("Descrição da mentoria java");
         mentoria.setData(LocalDate.now());
 
+
+
+    // System.out.println(curso1);
+    // System.out.println(curso2);
+    // System.out.println(mentoria);
+
+    Bootcamp bootcamp = new Bootcamp();
+    bootcamp.setNome("Bootcamb Java");
+    bootcamp.setDescricao("Descrição do bootcamp");
+    bootcamp.getConteudos().add(curso1);
+    bootcamp.getConteudos().add(curso2);
+    bootcamp.getConteudos().add(mentoria);
+
+    Dev devCamila = new Dev();
+    devCamila.setNome("Camila");
+    devCamila.inscreverBootcamp(bootcamp);
     
+    System.out.println("Conteúdos Inscritos Camila: " + devCamila.getConteudosInscritos());
+    devCamila.progredir();
+    devCamila.progredir();
+    devCamila.progredir();
+    System.out.println("***");
+    System.out.println("Conteúdos Inscritos Camila: " + devCamila.getConteudosInscritos());
+    System.out.println("Conteúdos Comcluídos Camila: " + devCamila.getConteudosConcluido());
+    System.out.println("XP = " + devCamila.calcularTotalXp());
+    System.out.println("------------------");
 
 
+    Dev devJefferson = new Dev();
+    devJefferson.setNome("Jefferson");
+    devJefferson.inscreverBootcamp(bootcamp);
 
+    System.out.println("Conteúdos Inscritos Jefferson:" + devJefferson.getConteudosInscritos());
+    devJefferson.progredir();
+    devCamila.progredir();
 
-
-
-    System.out.println(curso1);
-    System.out.println(curso2);
-    System.out.println(mentoria);
+    System.out.println("***");
+    System.out.println("Conteúdos Inscritos Jefferson:" + devJefferson.getConteudosInscritos());
+    System.out.println("Conteúdos Concluídos Jefferson:" + devJefferson.getConteudosConcluido());
+    System.out.println("XP = " + devJefferson.calcularTotalXp());
 
 }
 } 
